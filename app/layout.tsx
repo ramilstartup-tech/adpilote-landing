@@ -19,15 +19,32 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+
+        {/* Language Switcher */}
+        <div className="absolute top-4 right-4 z-50">
+          <a
+            href="https://adpilote.com"
+            className="px-3 py-1 text-sm text-gray-600 hover:text-black"
+          >
+            EN
+          </a>
+          <span className="mx-2 text-gray-400">|</span>
+          <a
+            href="https://adpilote.fr"
+            className="px-3 py-1 text-sm text-gray-600 hover:text-black"
+          >
+            FR
+          </a>
+        </div>
+
         {children}
+
       </body>
     </html>
   );
