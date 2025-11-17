@@ -85,6 +85,120 @@ export const landingContent = {
       ],
     },
 
+    // How It Works
+    howItWorks: {
+      title: "How AdPilote Works",
+      subtitle: "From messy search terms to clean insights in seconds.",
+      steps: [
+        {
+          title: "1. Connect Your Account",
+          description:
+            "Link your Google Ads account securely via OAuth. No credentials stored, full control.",
+          icon: "download",
+        },
+        {
+          title: "2. AI Analyzes Everything",
+          description:
+            "Our AI scans search terms, groups by intent, detects waste, and generates insights automatically.",
+          icon: "sparkles",
+        },
+        {
+          title: "3. Export & Optimize",
+          description:
+            "One-click export to Google Ads, or use insights to make better decisions faster.",
+          icon: "chart",
+        },
+      ],
+    },
+
+    // Before/After
+    beforeAfter: {
+      title: "See the Difference",
+      before: {
+        title: "Before AdPilote",
+        items: [
+          "best running shoes for men cheap",
+          "running shoes sale clearance free shipping",
+          "nike running shoes women size 8 purple",
+          "how to clean running shoes",
+          "running shoes vs walking shoes difference",
+        ],
+      },
+      after: {
+        title: "After AdPilote",
+        badge: "91 terms auto-cleaned",
+        clusters: [
+          { intent: "Purchase Intent", volume: "1,240", negatives: "12" },
+          { intent: "Research Intent", volume: "487", negatives: "34" },
+          { intent: "Irrelevant", volume: "156", negatives: "156" },
+        ],
+      },
+    },
+
+    // AI Insights
+    aiInsights: {
+      title: "AI-Powered Insights",
+      subtitle: "Stop guessing. Start optimizing with confidence.",
+      cards: [
+        {
+          type: "Insight",
+          title: "High-intent keywords underperforming",
+          description:
+            "3 clusters with strong purchase intent have ROAS below target. Low Quality Score detected.",
+        },
+        {
+          type: "Explanation",
+          title: "Why this matters",
+          description:
+            "You're paying 2.3× more per click than competitors for the same keywords. Ad copy mismatch likely.",
+        },
+        {
+          type: "Recommendation",
+          title: "Recommended action",
+          description:
+            "Rewrite ad copy to match search intent. Add negative keywords: 'cheap', 'free', 'clearance'.",
+        },
+      ],
+    },
+
+    // Dashboard Preview
+    dashboardPreview: {
+      title: "Real-Time Performance at a Glance",
+      metrics: [
+        { label: "ROAS", value: "4.2×", change: "+12%" },
+        { label: "Spend vs Target", value: "€8.4K / €10K", progress: 84 },
+        { label: "Wasted Spend", value: "-€1.2K", change: "-34%" },
+        { label: "Clusters Optimized", value: "23/31", progress: 74 },
+      ],
+    },
+
+    // Why Teams Love
+    whyTeamsLove: {
+      title: "Why teams love AdPilote",
+      cards: [
+        {
+          title: "Save Hours Every Week",
+          description:
+            "Automate search term cleaning and report generation. Reclaim 10+ hours per week.",
+        },
+        {
+          title: "Reduce Wasted Spend",
+          description:
+            "AI detects irrelevant clicks before they drain your budget. Average savings: 15-30%.",
+        },
+        {
+          title: "Clear, Actionable Reports",
+          description:
+            "Executive summaries in plain language. No more spreadsheet gymnastics.",
+        },
+        {
+          title: "Better Decisions, Faster",
+          description:
+            "AI insights highlight what's working and what's not. Optimize with confidence.",
+        },
+      ],
+    },
+
     // Product: Search Terms Intelligence
     productSearchTerms: {
       title: "Search Terms Intelligence",
@@ -339,6 +453,120 @@ export const landingContent = {
         {
           title: "Tableau de bord temps réel",
           description: "Surveillance live des campagnes avec alertes intelligentes",
+        },
+      ],
+    },
+
+    // How It Works
+    howItWorks: {
+      title: "Comment fonctionne AdPilote",
+      subtitle: "Des requêtes désordonnées aux insights clairs en quelques secondes.",
+      steps: [
+        {
+          title: "1. Connectez votre compte",
+          description:
+            "Liez votre compte Google Ads de manière sécurisée via OAuth. Aucune donnée stockée, contrôle total.",
+          icon: "download",
+        },
+        {
+          title: "2. L'IA analyse tout",
+          description:
+            "Notre IA scanne les requêtes, groupe par intention, détecte le gaspillage et génère des insights automatiquement.",
+          icon: "sparkles",
+        },
+        {
+          title: "3. Exportez et optimisez",
+          description:
+            "Export en un clic vers Google Ads, ou utilisez les insights pour prendre de meilleures décisions plus rapidement.",
+          icon: "chart",
+        },
+      ],
+    },
+
+    // Before/After
+    beforeAfter: {
+      title: "Voyez la différence",
+      before: {
+        title: "Avant AdPilote",
+        items: [
+          "meilleures chaussures running homme pas cher",
+          "chaussures running solde livraison gratuite",
+          "nike chaussures running femme taille 38 violet",
+          "comment nettoyer chaussures running",
+          "chaussures running vs marche différence",
+        ],
+      },
+      after: {
+        title: "Après AdPilote",
+        badge: "91 termes auto-nettoyés",
+        clusters: [
+          { intent: "Intention d'achat", volume: "1 240", negatives: "12" },
+          { intent: "Intention recherche", volume: "487", negatives: "34" },
+          { intent: "Non pertinent", volume: "156", negatives: "156" },
+        ],
+      },
+    },
+
+    // AI Insights
+    aiInsights: {
+      title: "Insights générés par IA",
+      subtitle: "Arrêtez de deviner. Commencez à optimiser avec confiance.",
+      cards: [
+        {
+          type: "Insight",
+          title: "Mots-clés forte intention sous-performent",
+          description:
+            "3 clusters avec forte intention d'achat ont un ROAS en dessous de l'objectif. Quality Score faible détecté.",
+        },
+        {
+          type: "Explication",
+          title: "Pourquoi c'est important",
+          description:
+            "Vous payez 2,3× plus par clic que vos concurrents pour les mêmes mots-clés. Inadéquation de l'annonce probable.",
+        },
+        {
+          type: "Recommandation",
+          title: "Action recommandée",
+          description:
+            "Réécrivez les annonces pour correspondre à l'intention. Ajoutez des mots-clés négatifs : 'pas cher', 'gratuit', 'solde'.",
+        },
+      ],
+    },
+
+    // Dashboard Preview
+    dashboardPreview: {
+      title: "Performance temps réel en un coup d'œil",
+      metrics: [
+        { label: "ROAS", value: "4,2×", change: "+12%" },
+        { label: "Dépense vs Cible", value: "8,4K€ / 10K€", progress: 84 },
+        { label: "Budget gaspillé", value: "-1,2K€", change: "-34%" },
+        { label: "Clusters optimisés", value: "23/31", progress: 74 },
+      ],
+    },
+
+    // Why Teams Love
+    whyTeamsLove: {
+      title: "Pourquoi les équipes adorent AdPilote",
+      cards: [
+        {
+          title: "Gagnez des heures chaque semaine",
+          description:
+            "Automatisez le nettoyage des requêtes et la génération de rapports. Récupérez 10h+ par semaine.",
+        },
+        {
+          title: "Réduisez le budget gaspillé",
+          description:
+            "L'IA détecte les clics non pertinents avant qu'ils ne drainent votre budget. Économies moyennes : 15-30%.",
+        },
+        {
+          title: "Rapports clairs et actionnables",
+          description:
+            "Résumés exécutifs en langage clair. Fini la gymnastique de tableurs.",
+        },
+        {
+          title: "Meilleures décisions, plus rapidement",
+          description:
+            "Les insights IA mettent en avant ce qui marche et ce qui ne marche pas. Optimisez en confiance.",
         },
       ],
     },
