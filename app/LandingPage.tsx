@@ -1,6 +1,7 @@
 "use client";
 
 import { landingContent, Lang } from "./landingContent";
+import { useState } from "react";
 
 type Props = {
   lang: Lang;
@@ -8,6 +9,7 @@ type Props = {
 
 export function LandingPage({ lang }: Props) {
   const t = landingContent[lang];
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly");
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -19,7 +21,7 @@ export function LandingPage({ lang }: Props) {
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a
-              href="#product"
+              href="#features"
               className="text-sm text-slate-600 hover:text-slate-900 transition"
             >
               {t.header.nav.product}
@@ -72,7 +74,7 @@ export function LandingPage({ lang }: Props) {
                     {t.hero.primaryCta}
                   </a>
                   <a
-                    href="#product"
+                    href="#features"
                     className="px-7 py-3.5 rounded-full border border-slate-300 hover:border-slate-400 text-slate-700 font-medium transition bg-white"
                   >
                     {t.hero.secondaryCta}
@@ -83,10 +85,10 @@ export function LandingPage({ lang }: Props) {
               {/* Dashboard Card */}
               <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
                 <h3 className="text-sm font-medium text-slate-500 mb-6">
-                  {t.hero.dashboardCard.title}
+                  {t.hero.visual.title}
                 </h3>
                 <div className="space-y-5">
-                  {t.hero.dashboardCard.stats.map((stat, i) => (
+                  {t.hero.visual.stats.map((stat, i) => (
                     <div key={i} className="flex items-center justify-between">
                       <span className="text-sm text-slate-600">
                         {stat.label}
@@ -102,8 +104,183 @@ export function LandingPage({ lang }: Props) {
           </div>
         </section>
 
+        {/* Problem Section */}
+        <section className="bg-white">
+          <div className="max-w-4xl mx-auto px-6 py-24 space-y-10">
+            <h2 className="text-4xl md:text-5xl font-bold">{t.problem.title}</h2>
+            <ul className="space-y-4">
+              {t.problem.bullets.map((bullet, i) => (
+                <li key={i} className="flex gap-4 text-lg text-slate-600">
+                  <span className="text-indigo-500 mt-1 flex-shrink-0">•</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Solution Section */}
+        <section className="bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
+            <div className="max-w-4xl space-y-6 text-center mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold">{t.solution.title}</h2>
+              <p className="text-xl text-slate-600 leading-relaxed">
+                {t.solution.subtitle}
+              </p>
+            </div>
+
+            {/* 3 cards visualization */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {t.solution.bullets.map((bullet, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-slate-200 bg-white p-8 space-y-4 shadow-sm hover:shadow-md transition"
+                >
+                  <div className="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center">
+                    <span className="text-indigo-500 text-xl font-bold">
+                      {i + 1}
+                    </span>
+                  </div>
+                  <p className="text-lg font-semibold text-slate-900">{bullet}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section id="features" className="bg-white">
+          <div className="max-w-6xl mx-auto px-6 py-24 space-y-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-center">
+              {t.features.title}
+            </h2>
+
+            {t.features.list.map((feature, index) => (
+              <div
+                key={feature.id}
+                className={`grid md:grid-cols-2 gap-12 items-start ${
+                  index % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Feature Content */}
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h3 className="text-3xl font-bold">{feature.title}</h3>
+                    <p className="text-lg text-slate-600">{feature.subtitle}</p>
+                  </div>
+
+                  <ul className="space-y-3">
+                    {feature.bullets.map((bullet, i) => (
+                      <li key={i} className="flex gap-3 text-slate-600">
+                        <span className="text-indigo-500 mt-1 flex-shrink-0">
+                          →
+                        </span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {"exampleSummary" in feature && (
+                    <div className="mt-6 p-6 rounded-xl bg-slate-50 border border-slate-200">
+                      <p className="text-sm italic text-slate-700">
+                        {feature.exampleSummary}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Visual Hint / Pseudo-graphic */}
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
+                  {feature.id === "feature1" && (
+                    <div className="space-y-6">
+                      <div className="text-sm font-medium text-slate-500">
+                        Before → After
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          {[...Array(5)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="h-8 bg-slate-200 rounded"
+                            ></div>
+                          ))}
+                        </div>
+                        <div className="space-y-2">
+                          {[...Array(3)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="h-12 bg-indigo-100 rounded border border-indigo-200 flex items-center px-3"
+                            >
+                              <span className="text-xs text-indigo-700 font-medium">
+                                Cluster {i + 1}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {feature.id === "feature2" && (
+                    <div className="space-y-6">
+                      <div className="flex items-end justify-between h-32 gap-2 border-b border-l border-slate-200 pb-2 pl-2">
+                        {[60, 65, 70, 55, 40, 30, 45].map((height, i) => (
+                          <div
+                            key={i}
+                            className={`flex-1 rounded-t ${
+                              i === 4 || i === 5
+                                ? "bg-red-200"
+                                : "bg-green-200"
+                            }`}
+                            style={{ height: `${height}%` }}
+                          ></div>
+                        ))}
+                      </div>
+                      <div className="space-y-2">
+                        <div className="px-3 py-2 bg-red-50 border border-red-200 rounded text-xs text-red-700">
+                          ⚠ Alert: Conversions dropped 42%
+                        </div>
+                        <div className="px-3 py-2 bg-slate-100 rounded text-xs text-slate-600">
+                          CPA: 2.1× above target
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {feature.id === "feature3" && (
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-3 gap-2">
+                        {["ROAS", "CPA", "Conv."].map((kpi, i) => (
+                          <div
+                            key={i}
+                            className="p-3 bg-white border border-slate-200 rounded text-center"
+                          >
+                            <div className="text-xs text-slate-500">{kpi}</div>
+                            <div className="text-lg font-bold text-indigo-500">
+                              {i === 0 ? "4.2×" : i === 1 ? "€42" : "127"}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="h-2 bg-slate-200 rounded"></div>
+                      <div className="space-y-2">
+                        {[...Array(3)].map((_, i) => (
+                          <div key={i} className="space-y-1">
+                            <div className="h-3 bg-slate-200 rounded w-full"></div>
+                            <div className="h-3 bg-slate-200 rounded w-3/4"></div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* How It Works */}
-        <section id="how-it-works" className="bg-white">
+        <section id="how-it-works" className="bg-slate-50">
           <div className="max-w-6xl mx-auto px-6 py-24 space-y-12">
             <div className="text-center space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold">
@@ -116,417 +293,34 @@ export function LandingPage({ lang }: Props) {
               {t.howItWorks.steps.map((step, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl border border-slate-200 bg-white p-8 space-y-6 shadow-sm hover:shadow-md transition"
+                  className="rounded-2xl border border-slate-200 bg-white p-8 space-y-6 shadow-sm"
                 >
-                  {/* Icon */}
                   <div className="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center">
-                    {step.icon === "download" && (
-                      <svg
-                        className="w-6 h-6 text-indigo-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
-                        />
-                      </svg>
-                    )}
-                    {step.icon === "sparkles" && (
-                      <svg
-                        className="w-6 h-6 text-indigo-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                        />
-                      </svg>
-                    )}
-                    {step.icon === "chart" && (
-                      <svg
-                        className="w-6 h-6 text-indigo-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                        />
-                      </svg>
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold">{step.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-
-                  {/* Mini illustration with pseudo-UI */}
-                  <div className="space-y-2 pt-4">
-                    <div className="h-2 bg-slate-200 rounded" style={{ width: "100%" }}></div>
-                    <div className="h-2 bg-slate-200 rounded" style={{ width: "80%" }}></div>
-                    <div className="h-2 bg-indigo-200 rounded" style={{ width: "60%" }}></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Before/After */}
-        <section id="before-after" className="bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6 py-24 space-y-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-center">
-              {t.beforeAfter.title}
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* BEFORE */}
-              <div className="rounded-2xl border border-slate-200 bg-slate-100 p-8 space-y-6">
-                <h3 className="text-2xl font-bold text-slate-700">
-                  {t.beforeAfter.before.title}
-                </h3>
-                <div className="space-y-3">
-                  {t.beforeAfter.before.items.map((item, i) => (
-                    <div
-                      key={i}
-                      className="p-3 bg-slate-200/60 rounded text-sm text-slate-600 border border-slate-300"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <p className="text-xs text-slate-500 italic">
-                  Unstructured, time-consuming, error-prone
-                </p>
-              </div>
-
-              {/* AFTER */}
-              <div className="rounded-2xl border border-indigo-200 bg-white p-8 space-y-6 shadow-md">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    {t.beforeAfter.after.title}
-                  </h3>
-                  <span className="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-medium">
-                    {t.beforeAfter.after.badge}
-                  </span>
-                </div>
-
-                {/* Table-like structure */}
-                <div className="space-y-2">
-                  <div className="grid grid-cols-3 gap-2 text-xs font-medium text-slate-500 pb-2 border-b border-slate-200">
-                    <div>Intent</div>
-                    <div>Volume</div>
-                    <div>Negatives</div>
-                  </div>
-                  {t.beforeAfter.after.clusters.map((cluster, i) => (
-                    <div
-                      key={i}
-                      className="grid grid-cols-3 gap-2 p-3 bg-slate-50 rounded text-sm"
-                    >
-                      <div className="font-medium text-slate-900">
-                        {cluster.intent}
-                      </div>
-                      <div className="text-slate-600">{cluster.volume}</div>
-                      <div className="text-indigo-600 font-medium">
-                        {cluster.negatives}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-xs text-slate-500 italic">
-                  Organized, automated, actionable
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* AI Insights */}
-        <section id="ai-insights" className="bg-white">
-          <div className="max-w-6xl mx-auto px-6 py-24 space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold">
-                {t.aiInsights.title}
-              </h2>
-              <p className="text-xl text-slate-600">{t.aiInsights.subtitle}</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {t.aiInsights.cards.map((card, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-slate-200 bg-white p-8 space-y-4 shadow-sm"
-                >
-                  <div className="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium">
-                    {card.type}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    {card.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Mini Dashboard Block */}
-        <section id="dashboard" className="bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6 py-24 space-y-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-center">
-              {t.dashboardPreview.title}
-            </h2>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm">
-              <div className="grid md:grid-cols-2 gap-10">
-                {/* Left: Pseudo line chart */}
-                <div className="space-y-4">
-                  <div className="flex items-end justify-between h-48 gap-2 border-b border-l border-slate-200 pb-2 pl-2">
-                    {[65, 70, 75, 68, 80, 85, 90, 88, 95, 92, 98, 100].map(
-                      (height, i) => (
-                        <div
-                          key={i}
-                          className="flex-1 bg-indigo-200 rounded-t hover:bg-indigo-300 transition"
-                          style={{ height: `${height}%` }}
-                        ></div>
-                      )
-                    )}
-                  </div>
-                  <p className="text-sm text-slate-500 text-center">
-                    Performance trend (last 12 weeks)
-                  </p>
-                </div>
-
-                {/* Right: Metrics */}
-                <div className="space-y-6">
-                  {t.dashboardPreview.metrics.map((metric, i) => (
-                    <div key={i} className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-600">
-                          {metric.label}
-                        </span>
-                        {"change" in metric && (
-                          <span
-                            className={`text-xs font-medium ${
-                              metric.change.startsWith("+")
-                                ? "text-green-600"
-                                : "text-red-600"
-                            }`}
-                          >
-                            {metric.change}
-                          </span>
-                        )}
-                      </div>
-                      <div className="text-2xl font-bold text-slate-900">
-                        {metric.value}
-                      </div>
-                      {"progress" in metric && (
-                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-indigo-500 rounded-full"
-                            style={{ width: `${metric.progress}%` }}
-                          ></div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Teams Love */}
-        <section id="why-teams-love" className="bg-white">
-          <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-center">
-              {t.whyTeamsLove.title}
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {t.whyTeamsLove.cards.map((card, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 p-10 space-y-4 hover:shadow-md transition"
-                >
-                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
                     <span className="text-indigo-500 text-xl font-bold">
                       {i + 1}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold">{card.title}</h3>
-                  <p className="text-lg text-slate-600 leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Problem Section */}
-        <section className="bg-slate-50">
-          <div className="max-w-4xl mx-auto px-6 py-24 space-y-10">
-            <h2 className="text-4xl md:text-5xl font-bold">{t.problem.title}</h2>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              {t.problem.intro}
-            </p>
-            <ul className="space-y-4">
-              {t.problem.pains.map((pain, i) => (
-                <li key={i} className="flex gap-4 text-lg text-slate-600">
-                  <span className="text-indigo-500 mt-1 flex-shrink-0">•</span>
-                  <span>{pain}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-xl text-slate-600 italic leading-relaxed">
-              {t.problem.closer}
-            </p>
-          </div>
-        </section>
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-bold">{step.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{step.text}</p>
+                  </div>
 
-        {/* Promise Section */}
-        <section className="bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
-            <div className="max-w-4xl space-y-10">
-              <h2 className="text-4xl md:text-5xl font-bold">{t.promise.title}</h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                {t.promise.intro}
-              </p>
-              <ul className="space-y-4">
-                {t.promise.benefits.map((benefit, i) => (
-                  <li key={i} className="flex gap-4 text-lg text-slate-600">
-                    <span className="text-indigo-500 mt-1 flex-shrink-0">✓</span>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Product Parts Cards */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {t.promise.productParts.map((part, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-slate-200 bg-white p-8 space-y-4 shadow-sm hover:shadow-md transition"
-                >
-                  <h3 className="text-xl font-semibold">{part.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {part.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Product: Search Terms Intelligence */}
-        <section id="product" className="bg-white">
-          <div className="max-w-5xl mx-auto px-6 py-24">
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-10 md:p-14 space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                {t.productSearchTerms.title}
-              </h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                {t.productSearchTerms.intro}
-              </p>
-              <ul className="space-y-4">
-                {t.productSearchTerms.features.map((feature, i) => (
-                  <li key={i} className="flex gap-4 text-lg text-slate-600">
-                    <span className="text-indigo-500 mt-1 flex-shrink-0">→</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Product: AI Reports */}
-        <section className="bg-slate-50">
-          <div className="max-w-5xl mx-auto px-6 py-24">
-            <div className="rounded-3xl border border-slate-200 bg-white p-10 md:p-14 space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                {t.productReports.title}
-              </h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                {t.productReports.intro}
-              </p>
-              <ul className="space-y-4">
-                {t.productReports.features.map((feature, i) => (
-                  <li key={i} className="flex gap-4 text-lg text-slate-600">
-                    <span className="text-indigo-500 mt-1 flex-shrink-0">→</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Product: Real-Time Dashboard */}
-        <section className="bg-white">
-          <div className="max-w-5xl mx-auto px-6 py-24">
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-10 md:p-14 space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                {t.productDashboard.title}
-              </h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                {t.productDashboard.intro}
-              </p>
-              <ul className="space-y-4">
-                {t.productDashboard.features.map((feature, i) => (
-                  <li key={i} className="flex gap-4 text-lg text-slate-600">
-                    <span className="text-indigo-500 mt-1 flex-shrink-0">→</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Who It's For */}
-        <section className="bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-center">
-              {t.whoItsFor.title}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {t.whoItsFor.cards.map((card, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-slate-200 bg-white p-10 space-y-6 shadow-sm hover:shadow-md transition"
-                >
-                  <h3 className="text-2xl font-bold">{card.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {card.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {card.benefits.map((benefit, j) => (
-                      <li key={j} className="flex gap-3 text-slate-600">
-                        <span className="text-indigo-500">✓</span>
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Pseudo-UI visualization */}
+                  <div className="space-y-2 pt-4">
+                    <div
+                      className="h-2 bg-slate-200 rounded"
+                      style={{ width: "100%" }}
+                    ></div>
+                    <div
+                      className="h-2 bg-slate-200 rounded"
+                      style={{ width: "80%" }}
+                    ></div>
+                    <div
+                      className="h-2 bg-indigo-200 rounded"
+                      style={{ width: "60%" }}
+                    ></div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -540,9 +334,34 @@ export function LandingPage({ lang }: Props) {
               <h2 className="text-4xl md:text-5xl font-bold">
                 {t.pricing.title}
               </h2>
-              <p className="text-xl text-slate-600">{t.pricing.note}</p>
+              <p className="text-xl text-slate-600">{t.pricing.subtitle}</p>
             </div>
 
+            {/* Billing Toggle */}
+            <div className="flex items-center justify-center gap-3">
+              <button
+                onClick={() => setBillingPeriod("monthly")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                  billingPeriod === "monthly"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                {t.pricing.toggle.monthly}
+              </button>
+              <button
+                onClick={() => setBillingPeriod("yearly")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                  billingPeriod === "yearly"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                {t.pricing.toggle.yearly}
+              </button>
+            </div>
+
+            {/* Pricing Cards */}
             <div className="grid md:grid-cols-3 gap-8">
               {t.pricing.plans.map((plan, i) => (
                 <div
@@ -557,18 +376,23 @@ export function LandingPage({ lang }: Props) {
                     <h3 className="text-2xl font-bold">{plan.name}</h3>
                     <div className="flex items-baseline gap-1">
                       <span className="text-5xl font-bold">
-                        {plan.price}
-                        {plan.currency}
+                        {billingPeriod === "monthly"
+                          ? plan.monthly
+                          : plan.yearly}
                       </span>
-                      <span className="text-slate-600">{plan.period}</span>
+                      <span className="text-slate-600">
+                        {billingPeriod === "monthly" ? "/mo" : "/yr"}
+                      </span>
                     </div>
+                    <p className="text-sm text-slate-600">{plan.credits}</p>
+                    <p className="text-sm text-slate-600">{plan.accounts}</p>
                   </div>
 
                   <ul className="space-y-4">
-                    {plan.features.map((feature, j) => (
+                    {plan.bullets.map((bullet, j) => (
                       <li key={j} className="flex gap-3 text-slate-600">
                         <span className="text-indigo-500 mt-0.5">✓</span>
-                        <span>{feature}</span>
+                        <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -587,9 +411,21 @@ export function LandingPage({ lang }: Props) {
               ))}
             </div>
 
-            <p className="text-center text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              {t.pricing.enterprise}
-            </p>
+            {/* Extra Credits */}
+            <div className="max-w-3xl mx-auto rounded-2xl border border-slate-200 bg-slate-50 p-10 space-y-6">
+              <h3 className="text-2xl font-bold">{t.pricing.extraCredits.title}</h3>
+              <p className="text-slate-600">{t.pricing.extraCredits.text}</p>
+              <div className="grid grid-cols-3 gap-4">
+                {t.pricing.extraCredits.bullets.map((bullet, i) => (
+                  <div
+                    key={i}
+                    className="p-4 bg-white border border-slate-200 rounded-xl text-center"
+                  >
+                    <p className="text-sm font-medium text-slate-900">{bullet}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -605,8 +441,8 @@ export function LandingPage({ lang }: Props) {
                   key={i}
                   className="rounded-2xl border border-slate-200 bg-white p-8 space-y-4 shadow-sm"
                 >
-                  <h3 className="text-xl font-semibold">{item.question}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.answer}</p>
+                  <h3 className="text-xl font-semibold">{item.q}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
