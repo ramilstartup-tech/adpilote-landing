@@ -10,42 +10,42 @@ export function LandingPage({ lang }: Props) {
   const t = landingContent[lang];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
+    <div className="min-h-screen bg-white text-slate-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="text-xl font-bold text-indigo-400">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div className="text-xl font-bold text-slate-900">
             {t.header.logo}
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a
               href="#product"
-              className="text-sm text-slate-300 hover:text-slate-50 transition"
+              className="text-sm text-slate-600 hover:text-slate-900 transition"
             >
               {t.header.nav.product}
             </a>
             <a
               href="#pricing"
-              className="text-sm text-slate-300 hover:text-slate-50 transition"
+              className="text-sm text-slate-600 hover:text-slate-900 transition"
             >
               {t.header.nav.pricing}
             </a>
             <a
               href="#faq"
-              className="text-sm text-slate-300 hover:text-slate-50 transition"
+              className="text-sm text-slate-600 hover:text-slate-900 transition"
             >
               {t.header.nav.faq}
             </a>
             <a
               href="#contact"
-              className="text-sm text-slate-300 hover:text-slate-50 transition"
+              className="text-sm text-slate-600 hover:text-slate-900 transition"
             >
               {t.header.nav.contact}
             </a>
           </nav>
           <a
             href="#pricing"
-            className="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium transition"
+            className="px-6 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium transition shadow-sm"
           >
             {t.header.cta}
           </a>
@@ -54,24 +54,26 @@ export function LandingPage({ lang }: Props) {
 
       <main>
         {/* Hero Section */}
-        <section className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+        <section className="bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
                   {t.hero.title}
                 </h1>
-                <p className="text-lg text-slate-300">{t.hero.subtitle}</p>
+                <p className="text-xl text-slate-600 leading-relaxed">
+                  {t.hero.subtitle}
+                </p>
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="#pricing"
-                    className="px-6 py-3 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium transition"
+                    className="px-7 py-3.5 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium transition shadow-sm"
                   >
                     {t.hero.primaryCta}
                   </a>
                   <a
                     href="#product"
-                    className="px-6 py-3 rounded-full border border-slate-600 hover:border-slate-400 text-sm font-medium transition"
+                    className="px-7 py-3.5 rounded-full border border-slate-300 hover:border-slate-400 text-slate-700 font-medium transition bg-white"
                   >
                     {t.hero.secondaryCta}
                   </a>
@@ -79,17 +81,17 @@ export function LandingPage({ lang }: Props) {
               </div>
 
               {/* Dashboard Card */}
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-4">
-                <h3 className="text-sm font-medium text-slate-400">
+              <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+                <h3 className="text-sm font-medium text-slate-500 mb-6">
                   {t.hero.dashboardCard.title}
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-5">
                   {t.hero.dashboardCard.stats.map((stat, i) => (
                     <div key={i} className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-600">
                         {stat.label}
                       </span>
-                      <span className="text-2xl font-bold text-indigo-400">
+                      <span className="text-3xl font-bold text-indigo-500">
                         {stat.value}
                       </span>
                     </div>
@@ -101,32 +103,38 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Problem Section */}
-        <section className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20 space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">{t.problem.title}</h2>
-            <p className="text-lg text-slate-300">{t.problem.intro}</p>
-            <ul className="space-y-3">
+        <section className="bg-white">
+          <div className="max-w-4xl mx-auto px-6 py-24 space-y-10">
+            <h2 className="text-4xl md:text-5xl font-bold">{t.problem.title}</h2>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              {t.problem.intro}
+            </p>
+            <ul className="space-y-4">
               {t.problem.pains.map((pain, i) => (
-                <li key={i} className="flex gap-3 text-slate-300">
-                  <span className="text-indigo-400 mt-1">•</span>
+                <li key={i} className="flex gap-4 text-lg text-slate-600">
+                  <span className="text-indigo-500 mt-1 flex-shrink-0">•</span>
                   <span>{pain}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-lg text-slate-300 italic">{t.problem.closer}</p>
+            <p className="text-xl text-slate-600 italic leading-relaxed">
+              {t.problem.closer}
+            </p>
           </div>
         </section>
 
         {/* Promise Section */}
-        <section className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20 space-y-10">
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">{t.promise.title}</h2>
-              <p className="text-lg text-slate-300">{t.promise.intro}</p>
-              <ul className="space-y-3">
+        <section className="bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
+            <div className="max-w-4xl space-y-10">
+              <h2 className="text-4xl md:text-5xl font-bold">{t.promise.title}</h2>
+              <p className="text-xl text-slate-600 leading-relaxed">
+                {t.promise.intro}
+              </p>
+              <ul className="space-y-4">
                 {t.promise.benefits.map((benefit, i) => (
-                  <li key={i} className="flex gap-3 text-slate-300">
-                    <span className="text-indigo-400 mt-1">✓</span>
+                  <li key={i} className="flex gap-4 text-lg text-slate-600">
+                    <span className="text-indigo-500 mt-1 flex-shrink-0">✓</span>
                     <span>{benefit}</span>
                   </li>
                 ))}
@@ -138,10 +146,12 @@ export function LandingPage({ lang }: Props) {
               {t.promise.productParts.map((part, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-3"
+                  className="rounded-2xl border border-slate-200 bg-white p-8 space-y-4 shadow-sm hover:shadow-md transition"
                 >
-                  <h3 className="text-lg font-semibold">{part.title}</h3>
-                  <p className="text-sm text-slate-400">{part.description}</p>
+                  <h3 className="text-xl font-semibold">{part.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {part.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -149,19 +159,19 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Product: Search Terms Intelligence */}
-        <section id="product" className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 md:p-10 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold">
+        <section id="product" className="bg-white">
+          <div className="max-w-5xl mx-auto px-6 py-24">
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-10 md:p-14 space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold">
                 {t.productSearchTerms.title}
               </h2>
-              <p className="text-lg text-slate-300">
+              <p className="text-xl text-slate-600 leading-relaxed">
                 {t.productSearchTerms.intro}
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {t.productSearchTerms.features.map((feature, i) => (
-                  <li key={i} className="flex gap-3 text-slate-300">
-                    <span className="text-indigo-400 mt-1">→</span>
+                  <li key={i} className="flex gap-4 text-lg text-slate-600">
+                    <span className="text-indigo-500 mt-1 flex-shrink-0">→</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -171,17 +181,19 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Product: AI Reports */}
-        <section className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 md:p-10 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold">
+        <section className="bg-slate-50">
+          <div className="max-w-5xl mx-auto px-6 py-24">
+            <div className="rounded-3xl border border-slate-200 bg-white p-10 md:p-14 space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold">
                 {t.productReports.title}
               </h2>
-              <p className="text-lg text-slate-300">{t.productReports.intro}</p>
-              <ul className="space-y-3">
+              <p className="text-xl text-slate-600 leading-relaxed">
+                {t.productReports.intro}
+              </p>
+              <ul className="space-y-4">
                 {t.productReports.features.map((feature, i) => (
-                  <li key={i} className="flex gap-3 text-slate-300">
-                    <span className="text-indigo-400 mt-1">→</span>
+                  <li key={i} className="flex gap-4 text-lg text-slate-600">
+                    <span className="text-indigo-500 mt-1 flex-shrink-0">→</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -191,19 +203,19 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Product: Real-Time Dashboard */}
-        <section className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 md:p-10 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold">
+        <section className="bg-white">
+          <div className="max-w-5xl mx-auto px-6 py-24">
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-10 md:p-14 space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold">
                 {t.productDashboard.title}
               </h2>
-              <p className="text-lg text-slate-300">
+              <p className="text-xl text-slate-600 leading-relaxed">
                 {t.productDashboard.intro}
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {t.productDashboard.features.map((feature, i) => (
-                  <li key={i} className="flex gap-3 text-slate-300">
-                    <span className="text-indigo-400 mt-1">→</span>
+                  <li key={i} className="flex gap-4 text-lg text-slate-600">
+                    <span className="text-indigo-500 mt-1 flex-shrink-0">→</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -213,23 +225,25 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Who It's For */}
-        <section className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20 space-y-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">
+        <section className="bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-center">
               {t.whoItsFor.title}
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {t.whoItsFor.cards.map((card, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 space-y-4"
+                  className="rounded-2xl border border-slate-200 bg-white p-10 space-y-6 shadow-sm hover:shadow-md transition"
                 >
-                  <h3 className="text-xl font-bold">{card.title}</h3>
-                  <p className="text-slate-300">{card.description}</p>
-                  <ul className="space-y-2">
+                  <h3 className="text-2xl font-bold">{card.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {card.description}
+                  </p>
+                  <ul className="space-y-3">
                     {card.benefits.map((benefit, j) => (
-                      <li key={j} className="flex gap-2 text-sm text-slate-400">
-                        <span className="text-indigo-400">✓</span>
+                      <li key={j} className="flex gap-3 text-slate-600">
+                        <span className="text-indigo-500">✓</span>
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -241,40 +255,40 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20 space-y-12">
-            <div className="text-center space-y-3">
-              <h2 className="text-3xl md:text-4xl font-bold">
+        <section id="pricing" className="bg-white">
+          <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
+            <div className="text-center space-y-4">
+              <h2 className="text-4xl md:text-5xl font-bold">
                 {t.pricing.title}
               </h2>
-              <p className="text-slate-300">{t.pricing.note}</p>
+              <p className="text-xl text-slate-600">{t.pricing.note}</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {t.pricing.plans.map((plan, i) => (
                 <div
                   key={i}
-                  className={`rounded-2xl border p-8 space-y-6 ${
+                  className={`rounded-2xl border p-10 space-y-8 transition ${
                     plan.highlighted
-                      ? "border-indigo-500 bg-slate-900/80 shadow-lg shadow-indigo-500/20"
-                      : "border-slate-800 bg-slate-900/60"
+                      ? "border-indigo-500 bg-indigo-50/50 shadow-lg shadow-indigo-100"
+                      : "border-slate-200 bg-white shadow-sm hover:shadow-md"
                   }`}
                 >
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold">{plan.name}</h3>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-bold">{plan.name}</h3>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold">
+                      <span className="text-5xl font-bold">
                         {plan.price}
                         {plan.currency}
                       </span>
-                      <span className="text-slate-400">{plan.period}</span>
+                      <span className="text-slate-600">{plan.period}</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {plan.features.map((feature, j) => (
-                      <li key={j} className="flex gap-2 text-sm text-slate-300">
-                        <span className="text-indigo-400 mt-0.5">✓</span>
+                      <li key={j} className="flex gap-3 text-slate-600">
+                        <span className="text-indigo-500 mt-0.5">✓</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -282,10 +296,10 @@ export function LandingPage({ lang }: Props) {
 
                   <a
                     href="#contact"
-                    className={`block w-full text-center px-5 py-3 rounded-full text-sm font-medium transition ${
+                    className={`block w-full text-center px-6 py-3.5 rounded-full font-medium transition ${
                       plan.highlighted
-                        ? "bg-indigo-500 hover:bg-indigo-400"
-                        : "border border-slate-600 hover:border-slate-400"
+                        ? "bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm"
+                        : "border border-slate-300 hover:border-slate-400 text-slate-700 bg-white"
                     }`}
                   >
                     {plan.cta}
@@ -294,26 +308,26 @@ export function LandingPage({ lang }: Props) {
               ))}
             </div>
 
-            <p className="text-center text-sm text-slate-400 max-w-3xl mx-auto">
+            <p className="text-center text-slate-600 max-w-3xl mx-auto leading-relaxed">
               {t.pricing.enterprise}
             </p>
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="border-b border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-20 space-y-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">
+        <section id="faq" className="bg-slate-50">
+          <div className="max-w-4xl mx-auto px-6 py-24 space-y-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-center">
               {t.faq.title}
             </h2>
-            <div className="space-y-6 max-w-3xl mx-auto">
+            <div className="space-y-6">
               {t.faq.items.map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-3"
+                  className="rounded-2xl border border-slate-200 bg-white p-8 space-y-4 shadow-sm"
                 >
-                  <h3 className="text-lg font-semibold">{item.question}</h3>
-                  <p className="text-slate-300">{item.answer}</p>
+                  <h3 className="text-xl font-semibold">{item.question}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.answer}</p>
                 </div>
               ))}
             </div>
@@ -321,20 +335,25 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Footer */}
-        <footer id="contact" className="border-t border-slate-800">
-          <div className="max-w-5xl mx-auto px-4 py-12 space-y-6">
-            <div className="text-center space-y-4">
-              <p className="text-lg font-medium">{t.footer.tagline}</p>
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
-                <a href={`mailto:${t.footer.email}`} className="hover:text-slate-50 transition">
+        <footer id="contact" className="bg-white border-t border-slate-200">
+          <div className="max-w-6xl mx-auto px-6 py-16 space-y-8">
+            <div className="text-center space-y-6">
+              <p className="text-xl font-medium text-slate-900">
+                {t.footer.tagline}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-6 text-slate-600">
+                <a
+                  href={`mailto:${t.footer.email}`}
+                  className="hover:text-slate-900 transition"
+                >
                   {t.footer.email}
                 </a>
-                <span>•</span>
-                <a href="#" className="hover:text-slate-50 transition">
+                <span className="text-slate-300">•</span>
+                <a href="#" className="hover:text-slate-900 transition">
                   {t.footer.links.privacy}
                 </a>
-                <span>•</span>
-                <a href="#" className="hover:text-slate-50 transition">
+                <span className="text-slate-300">•</span>
+                <a href="#" className="hover:text-slate-900 transition">
                   {t.footer.links.terms}
                 </a>
               </div>
