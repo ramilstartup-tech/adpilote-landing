@@ -2,6 +2,7 @@
 
 import { landingContent, Lang } from "./landingContent";
 import { useState } from "react";
+import { EarlyAccessForm } from "./components/EarlyAccessForm";
 
 type Props = {
   lang: Lang;
@@ -324,6 +325,26 @@ export function LandingPage({ lang }: Props) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Join Beta Section */}
+        <section id="join-beta" className="bg-slate-50">
+          <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
+            <EarlyAccessForm
+              language={lang}
+              title={t.betaSection.title}
+              subtitle={t.betaSection.subtitle}
+              ctaLabel={t.betaSection.ctaLabel}
+              emailLabel={t.betaSection.emailLabel}
+              emailPlaceholder={t.betaSection.emailPlaceholder}
+              companyLabel={t.betaSection.companyLabel}
+              companyPlaceholder={t.betaSection.companyPlaceholder}
+              roleLabel={t.betaSection.roleLabel}
+              rolePlaceholder={t.betaSection.rolePlaceholder}
+              loadingText={t.betaSection.loadingText}
+              errorText={t.betaSection.errorText}
+            />
           </div>
         </section>
 

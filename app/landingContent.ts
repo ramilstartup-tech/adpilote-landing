@@ -231,6 +231,20 @@ export const landingContent = {
       ],
     },
 
+    betaSection: {
+      title: "Join the AdPilote beta",
+      subtitle: "Leave your email to get early access to our AI Google Ads copilot.",
+      ctaLabel: "Request early access",
+      emailLabel: "Work email",
+      emailPlaceholder: "your.email@company.com",
+      companyLabel: "Company / website (optional)",
+      companyPlaceholder: "acme.com",
+      roleLabel: "Your role (optional)",
+      rolePlaceholder: "e.g., Freelancer, Agency...",
+      loadingText: "Sending...",
+      errorText: "Something went wrong. Please try again.",
+    },
+
     footer: {
       tagline: "AdPilote — Your AI Copilot for Google Ads.",
       email: "hello@adpilote.com",
@@ -471,6 +485,20 @@ export const landingContent = {
           a: "Oui, chaque offre commence par un essai gratuit de 14 jours — sans carte bancaire.",
         },
       ],
+    },
+
+    betaSection: {
+      title: "Rejoindre la bêta AdPilote",
+      subtitle: "Laissez votre email pour obtenir un accès anticipé à notre copilote IA pour Google Ads.",
+      ctaLabel: "Demander l'accès anticipé",
+      emailLabel: "Email professionnel",
+      emailPlaceholder: "votre.email@entreprise.fr",
+      companyLabel: "Entreprise / site web (optionnel)",
+      companyPlaceholder: "acme.fr",
+      roleLabel: "Votre rôle (optionnel)",
+      rolePlaceholder: "ex: Freelance, Agence...",
+      loadingText: "Envoi en cours...",
+      errorText: "Une erreur s'est produite. Veuillez réessayer.",
     },
 
     footer: {
