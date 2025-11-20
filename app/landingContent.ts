@@ -19,14 +19,14 @@ export const landingContent = {
         faq: "FAQ",
         contact: "Contact",
       },
-      cta: "Start 14-day Trial",
+      cta: "Join Beta",
     },
 
     hero: {
       title: "Your AI Copilot for Google Ads.",
       subtitle:
         "Clean and cluster search terms, catch issues early, and send clear reports — without spending hours in spreadsheets.",
-      primaryCta: "Start 14-day Trial",
+      primaryCta: "Request Early Access",
       secondaryCta: "Watch Demo",
       visual: {
         title: "Search Terms Intelligence",
@@ -271,14 +271,14 @@ export const landingContent = {
         faq: "FAQ",
         contact: "Contact",
       },
-      cta: "Essai 14 jours",
+      cta: "Rejoindre la bêta",
     },
 
     hero: {
       title: "Votre copilote IA pour Google Ads.",
       subtitle:
         "Nettoyez et regroupez les requêtes, détectez les problèmes tôt et envoyez des rapports clairs — sans passer vos soirées dans les tableurs.",
-      primaryCta: "Essai gratuit 14 jours",
+      primaryCta: "Demander l'accès anticipé",
       secondaryCta: "Voir la démo",
       visual: {
         title: "Intelligence des requêtes",

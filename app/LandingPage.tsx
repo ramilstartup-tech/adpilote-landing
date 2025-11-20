@@ -47,7 +47,7 @@ export function LandingPage({ lang }: Props) {
             </a>
           </nav>
           <a
-            href="#pricing"
+            href="#early-access"
             className="px-6 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium transition shadow-sm"
           >
             {t.header.cta}
@@ -69,16 +69,10 @@ export function LandingPage({ lang }: Props) {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="#pricing"
+                    href="#early-access"
                     className="px-7 py-3.5 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium transition shadow-sm"
                   >
                     {t.hero.primaryCta}
-                  </a>
-                  <a
-                    href="#features"
-                    className="px-7 py-3.5 rounded-full border border-slate-300 hover:border-slate-400 text-slate-700 font-medium transition bg-white"
-                  >
-                    {t.hero.secondaryCta}
                   </a>
                 </div>
               </div>
@@ -329,8 +323,8 @@ export function LandingPage({ lang }: Props) {
         </section>
 
         {/* Join Beta Section */}
-        <section id="join-beta" className="bg-slate-50">
-          <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
+        <section id="early-access" className="bg-slate-50">
+          <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
             <EarlyAccessForm
               language={lang}
               title={t.betaSection.title}
@@ -348,7 +342,8 @@ export function LandingPage({ lang }: Props) {
           </div>
         </section>
 
-        {/* Pricing */}
+        {/* Pricing - Hidden for Beta Phase */}
+        {/*
         <section id="pricing" className="bg-white">
           <div className="max-w-6xl mx-auto px-6 py-24 space-y-16">
             <div className="text-center space-y-4">
@@ -358,7 +353,6 @@ export function LandingPage({ lang }: Props) {
               <p className="text-xl text-slate-600">{t.pricing.subtitle}</p>
             </div>
 
-            {/* Billing Toggle */}
             <div className="flex items-center justify-center gap-3">
               <button
                 onClick={() => setBillingPeriod("monthly")}
@@ -382,7 +376,6 @@ export function LandingPage({ lang }: Props) {
               </button>
             </div>
 
-            {/* Pricing Cards */}
             <div className="grid md:grid-cols-3 gap-8">
               {t.pricing.plans.map((plan, i) => (
                 <div
@@ -432,7 +425,6 @@ export function LandingPage({ lang }: Props) {
               ))}
             </div>
 
-            {/* Extra Credits */}
             <div className="max-w-3xl mx-auto rounded-2xl border border-slate-200 bg-slate-50 p-10 space-y-6">
               <h3 className="text-2xl font-bold">{t.pricing.extraCredits.title}</h3>
               <p className="text-slate-600">{t.pricing.extraCredits.text}</p>
@@ -449,6 +441,7 @@ export function LandingPage({ lang }: Props) {
             </div>
           </div>
         </section>
+        */}
 
         {/* FAQ */}
         <section id="faq" className="bg-slate-50">

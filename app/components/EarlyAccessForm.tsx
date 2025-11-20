@@ -98,20 +98,20 @@ export function EarlyAccessForm(props: EarlyAccessFormProps) {
   const hasError = status === "error";
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-lg">
-      <div className="space-y-6">
+    <div className="max-w-xl mx-auto rounded-2xl border border-slate-200 bg-white p-5 md:p-6 shadow-lg">
+      <div className="space-y-5">
         {/* Header */}
-        <div className="space-y-2 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+        <div className="space-y-1.5 text-center">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900">
             {title}
           </h2>
-          <p className="text-slate-600">{subtitle}</p>
+          <p className="text-sm text-slate-600">{subtitle}</p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3">
           {/* Email Field */}
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <label
               htmlFor="email"
               className="block text-sm font-medium text-slate-700"
@@ -129,12 +129,12 @@ export function EarlyAccessForm(props: EarlyAccessFormProps) {
               }
               placeholder={emailPlaceholder}
               disabled={isLoading}
-              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-slate-50 disabled:cursor-not-allowed transition"
+              className="w-full border border-slate-200 rounded-xl px-4 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-slate-50 disabled:cursor-not-allowed transition"
             />
           </div>
 
           {/* Company Field */}
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <label
               htmlFor="company"
               className="block text-sm font-medium text-slate-700"
@@ -151,12 +151,12 @@ export function EarlyAccessForm(props: EarlyAccessFormProps) {
               }
               placeholder={companyPlaceholder}
               disabled={isLoading}
-              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-slate-50 disabled:cursor-not-allowed transition"
+              className="w-full border border-slate-200 rounded-xl px-4 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-slate-50 disabled:cursor-not-allowed transition"
             />
           </div>
 
           {/* Role Field */}
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <label
               htmlFor="role"
               className="block text-sm font-medium text-slate-700"
@@ -171,7 +171,7 @@ export function EarlyAccessForm(props: EarlyAccessFormProps) {
                 setFormData({ ...formData, role: e.target.value })
               }
               disabled={isLoading}
-              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-slate-50 disabled:cursor-not-allowed transition"
+              className="w-full border border-slate-200 rounded-xl px-4 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent disabled:bg-slate-50 disabled:cursor-not-allowed transition"
             >
               {roleOptions[language].map((option) => (
                 <option key={option.value} value={option.value}>
@@ -192,7 +192,7 @@ export function EarlyAccessForm(props: EarlyAccessFormProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium px-6 py-3 rounded-full transition shadow-sm disabled:bg-indigo-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium px-6 py-2.5 rounded-full transition shadow-sm disabled:bg-indigo-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isLoading ? (
               <>
