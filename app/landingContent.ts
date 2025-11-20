@@ -220,14 +220,6 @@ export const landingContent = {
           q: "Is my data secure?",
           a: "All data is encrypted in transit and at rest. We never sell your data or use it to train public models.",
         },
-        {
-          q: "Can I cancel anytime?",
-          a: "Yes. You can cancel with one click from your account. Your access continues until the end of your billing period.",
-        },
-        {
-          q: "Do all plans include the 14-day trial?",
-          a: "Yes. Every plan starts with a 14-day free trial — no credit card required.",
-        },
       ],
     },
 
@@ -475,14 +467,6 @@ export const landingContent = {
         {
           q: "Mes données sont-elles sécurisées ?",
           a: "Toutes les données sont chiffrées en transit et au repos. Nous ne vendons jamais vos données et ne les utilisons pas pour entraîner des modèles publics.",
-        },
-        {
-          q: "Puis-je annuler à tout moment ?",
-          a: "Oui. Vous pouvez annuler en un clic depuis votre compte. Vous gardez l'accès jusqu'à la fin de votre période de facturation.",
-        },
-        {
-          q: "L'essai 14 jours est-il inclus dans tous les plans ?",
-          a: "Oui, chaque offre commence par un essai gratuit de 14 jours — sans carte bancaire.",
         },
       ],
     },
