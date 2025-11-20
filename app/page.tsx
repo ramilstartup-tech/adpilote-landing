@@ -9,7 +9,8 @@ export const dynamic = 'force-dynamic';
 
 // Generate metadata dynamically based on domain
 export async function generateMetadata(): Promise<Metadata> {
-  const host = headers().get('host') || '';
+  const headersList = await headers();
+  const host = headersList.get('host') || '';
   const lang = host.includes('.fr') ? 'fr' : 'en';
 
   return {
@@ -18,8 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootPage() {
-  const host = headers().get('host') || '';
+export default async function RootPage() {
+  const headersList = await headers();
+  const host = headersList.get('host') || '';
 
   // For .fr domain, render French version
   if (host.includes('.fr')) {
