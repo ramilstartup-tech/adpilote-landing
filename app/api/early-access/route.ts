@@ -10,13 +10,10 @@ type EarlyAccessPayload = {
 type AirtableRecord = {
   fields: {
     Email: string;
-    Company?: string;
-    "Role / Segment"?: string;
-    Language?: string;
+    "Company / Website"?: string;
+    Role?: string;
     Source: string;
-    "Created at": string;
-    "User Agent"?: string;
-    IP?: string;
+    Notes?: string;
   };
 };
 
@@ -69,21 +66,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Prepare Airtable record
+    // Prepare Airtable record with correct field names
+    // Field names must match exactly with Airtable column names
     const record: AirtableRecord = {
       fields: {
         Email: email,
-        Source: "adpilote-landing",
-        "Created at": new Date().toISOString(),
-        Language: language,
+        Source: "Landing page",
+        Notes: "", // Empty notes field
       },
     };
 
     // Add optional fields only if they exist
-    if (company) record.fields.Company = company;
-    if (role) record.fields["Role / Segment"] = role;
-    if (userAgent) record.fields["User Agent"] = userAgent;
-    if (ip) record.fields.IP = ip;
+    // "Company / Website" and "Role" match Airtable column names
+    if (company) record.fields["Company / Website"] = company;
+    if (role) record.fields.Role = role;
 
     // Send to Airtable
     const airtableUrl = `https://api.airtable.com/v0/${airtableBaseId}/${airtableTableName}`;
@@ -108,7 +104,7 @@ export async function POST(request: NextRequest) {
     const airtableData: AirtableResponse = await airtableResponse.json();
 
     // Log success (without sensitive data)
-    console.log("Early access lead saved:", email, { language, company: !!company, role: !!role });
+    console.log("Early access lead saved:", email, { company: !!company, role: !!role });
 
     return NextResponse.json({ ok: true, recordId: airtableData.records[0]?.id });
   } catch (error) {
