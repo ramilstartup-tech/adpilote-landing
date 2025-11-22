@@ -167,9 +167,7 @@ export function LandingPage({ lang }: Props) {
                   <ul className="space-y-3">
                     {feature.bullets.map((bullet, i) => (
                       <li key={i} className="flex gap-3 text-slate-600">
-                        <span className="text-indigo-500 mt-1 flex-shrink-0">
-                          →
-                        </span>
+                        <span className="text-indigo-500 mt-1 flex-shrink-0">•</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -189,7 +187,7 @@ export function LandingPage({ lang }: Props) {
                   {feature.id === "feature1" && (
                     <div className="space-y-6">
                       <div className="text-sm font-medium text-slate-500">
-                        Before → After
+                        Before -> After
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
@@ -233,10 +231,10 @@ export function LandingPage({ lang }: Props) {
                       </div>
                       <div className="space-y-2">
                         <div className="px-3 py-2 bg-red-50 border border-red-200 rounded text-xs text-red-700">
-                          ⚠ Alert: Conversions dropped 42%
+                          ⚠️ Alert: Conversions dropped 42%
                         </div>
                         <div className="px-3 py-2 bg-slate-100 rounded text-xs text-slate-600">
-                          CPA: 2.1× above target
+                          CPA: 2.1x above target
                         </div>
                       </div>
                     </div>
@@ -252,7 +250,7 @@ export function LandingPage({ lang }: Props) {
                           >
                             <div className="text-xs text-slate-500">{kpi}</div>
                             <div className="text-lg font-bold text-indigo-500">
-                              {i === 0 ? "4.2×" : i === 1 ? "€42" : "127"}
+                              {i === 0 ? "4.2x" : i === 1 ? "€42" : "127"}
                             </div>
                           </div>
                         ))}
@@ -405,7 +403,7 @@ export function LandingPage({ lang }: Props) {
                   <ul className="space-y-4">
                     {plan.bullets.map((bullet, j) => (
                       <li key={j} className="flex gap-3 text-slate-600">
-                        <span className="text-indigo-500 mt-0.5">✓</span>
+                        <span className="text-indigo-500 mt-0.5">•</span>
                         <span>{bullet}</span>
                       </li>
                     ))}

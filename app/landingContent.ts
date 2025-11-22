@@ -1,7 +1,4 @@
-// Типизированный контент лендинга для EN и FR
-// Вынесен в отдельный файл для удобства локализации и масштабирования
-
-export type Lang = "en" | "fr";
+﻿export type Lang = "en" | "fr";
 
 export const landingContent = {
   en: {
@@ -47,7 +44,7 @@ export const landingContent = {
         "Reports take hours and still miss the bigger picture.",
       ],
       visualHint:
-        "Infographic: chaos of search terms → missed insights → frustrated marketer.",
+        "Infographic: chaos of search terms + missed insights + frustrated marketer.",
     },
 
     solution: {
@@ -59,7 +56,7 @@ export const landingContent = {
         "Daily account monitoring with actionable summaries.",
         "Executive reports for managers and clients — generated automatically.",
       ],
-      visualHint: "Three cards: Search Terms • Daily Check • Reports.",
+      visualHint: "Three cards: Search Terms → Daily Check → Reports.",
     },
 
     features: {
@@ -78,7 +75,7 @@ export const landingContent = {
             "Export cleaned lists back into Google Ads.",
           ],
           visualHint:
-            "Before/After table: messy list → organized clusters with colored tags.",
+            "Before/After table: messy list + organized clusters with colored tags.",
         },
         {
           id: "feature2",
@@ -93,7 +90,7 @@ export const landingContent = {
             "Receive one concise daily summary instead of dozens of reports.",
           ],
           exampleSummary:
-            "\"Yesterday conversions on 'Invisalign Barcelona' dropped 42% after the landing page update. CPA is now 2.1× above target. Suggest: revert page, lower bids 15% until stable.\"",
+            "\"Yesterday conversions on 'Invisalign Barcelona' dropped 42% after the landing page update. CPA is now 2.1x above target. Suggest: revert page, lower bids 15% until stable.\"",
           visualHint:
             "Mini-dashboard with alerts, red/green trend lines, and a short text summary.",
         },
@@ -193,9 +190,9 @@ export const landingContent = {
         title: "Need more Credits?",
         text: "Buy extra Credits anytime as your accounts grow.",
         bullets: [
-          "100 Credits → €9",
-          "1,000 Credits → €29",
-          "5,000 Credits → €59",
+          "100 Credits + €9",
+          "1,000 Credits + €29",
+          "5,000 Credits + €59",
         ],
         visualHint: "Simple bar chart / tokens showing different credit packs.",
       },
@@ -277,13 +274,13 @@ export const landingContent = {
         stats: [
           { label: "Requêtes nettoyées", value: "1,47M" },
           { label: "Clusters", value: "132" },
-          { label: "Budget économisé", value: "4 920€" },
+          { label: "Budget économisé", value: "4 920 €" },
         ],
       },
     },
 
     problem: {
-      title: "Google Ads bouge vite — et il est facile de rater les signaux clés.",
+      title: "Google Ads bouge vite — il est facile de rater les signaux clés.",
       bullets: [
         "Les rapports de requêtes grossissent plus vite que vous ne pouvez les analyser.",
         "Les petites baisses de performance restent invisibles jusqu'à ce qu'il soit trop tard.",
@@ -291,7 +288,7 @@ export const landingContent = {
         "Les rapports prennent des heures et ne racontent pas toute l'histoire.",
       ],
       visualHint:
-        "Infographie : nuage de requêtes → signaux manqués → spécialiste débordé.",
+        "Infographie : nuage de requêtes + signaux manqués + spécialiste débordé.",
     },
 
     solution: {
@@ -303,8 +300,7 @@ export const landingContent = {
         "Contrôle quotidien du compte avec résumés actionnables.",
         "Rapports exécutifs pour managers et clients — générés automatiquement.",
       ],
-      visualHint:
-        "3 cartes : Requêtes • Check quotidien • Rapports exécutifs.",
+      visualHint: "3 cartes : Requêtes → Check quotidien → Rapports exécutifs.",
     },
 
     features: {
@@ -323,7 +319,7 @@ export const landingContent = {
             "Export des listes nettoyées vers Google Ads.",
           ],
           visualHint:
-            "Tableau Avant/Après : liste chaotique → clusters clairs avec tags colorés.",
+            "Tableau Avant/Après : liste chaotique + clusters clairs avec tags colorés.",
         },
         {
           id: "feature2",
@@ -334,11 +330,11 @@ export const landingContent = {
             "Détection des chutes soudaines de conversions ou CTR.",
             "Repérage des changements d'enchères des concurrents.",
             "Identification des soucis de landing page ou de tracking.",
-            "Détection d'anomalies sur CPA, ROAS, rythme budget, etc.",
+            "Détection d'anomalies sur CPA, ROAS, rythme budgétaire, etc.",
             "Un résumé concis par jour au lieu de dizaines de rapports.",
           ],
           exampleSummary:
-            "« Hier, les conversions sur \"Invisalign Barcelone\" ont chuté de 42 % après la mise en ligne de la nouvelle landing. Le CPA est 2,1× au-dessus de l'objectif. Suggestion : tester l'ancienne page et baisser les enchères de 15 % jusqu'à stabilisation. »",
+            "Hier, les conversions sur \"Invisalign Barcelone\" ont chuté de 42 % après la mise en ligne de la nouvelle landing. Le CPA est 2,1x au-dessus de l'objectif. Suggestion : tester l'ancienne page et baisser les enchères de 15 % jusqu'à stabilisation.",
           visualHint:
             "Mini-dashboard avec alertes, courbes rouge/vert et bloc de texte court.",
         },
@@ -375,7 +371,7 @@ export const landingContent = {
           title: "2. AdPilote analyse tout",
           text: "Requêtes, mots-clés, anomalies, mouvements concurrents, tendances de performance.",
           visualHint:
-            "Requêtes qui se transforment en clusters, icônes d'alertes et d'icônes de rapport.",
+            "Requêtes qui se transforment en clusters, icônes d'alertes et icônes de rapport.",
         },
         {
           title: "3. Vous agissez en confiance",
@@ -391,13 +387,13 @@ export const landingContent = {
       subtitle: "Essai gratuit 14 jours. Aucune carte bancaire requise.",
       toggle: {
         monthly: "Mensuel",
-        yearly: "Annuel (–35 %)",
+        yearly: "Annuel (-35 %)",
       },
       plans: [
         {
           name: "Freelance",
-          monthly: "39€",
-          yearly: "299€",
+          monthly: "39 €",
+          yearly: "299 €",
           credits: "100 Crédits / mois (1M requêtes)",
           accounts: "1 compte Google Ads",
           bullets: [
@@ -410,8 +406,8 @@ export const landingContent = {
         },
         {
           name: "Équipe",
-          monthly: "199€",
-          yearly: "1 599€",
+          monthly: "199 €",
+          yearly: "1 599 €",
           credits: "2 000 Crédits / mois (20M requêtes)",
           accounts: "Jusqu'à 10 comptes",
           bullets: [
@@ -424,8 +420,8 @@ export const landingContent = {
         },
         {
           name: "Agence",
-          monthly: "429€",
-          yearly: "3 499€",
+          monthly: "429 €",
+          yearly: "3 499 €",
           credits: "10 000 Crédits / mois (100M requêtes)",
           accounts: "Comptes illimités",
           bullets: [
@@ -441,9 +437,9 @@ export const landingContent = {
         title: "Besoin de plus de Crédits ?",
         text: "Achetez des Crédits additionnels à tout moment selon vos besoins.",
         bullets: [
-          "100 Crédits → 9€",
-          "1 000 Crédits → 29€",
-          "5 000 Crédits → 59€",
+          "100 Crédits + 9 €",
+          "1 000 Crédits + 29 €",
+          "5 000 Crédits + 59 €",
         ],
         visualHint: "Diagramme simple montrant différents packs de crédits.",
       },
@@ -480,7 +476,7 @@ export const landingContent = {
       companyLabel: "Entreprise / site web (optionnel)",
       companyPlaceholder: "acme.fr",
       roleLabel: "Votre rôle (optionnel)",
-      rolePlaceholder: "ex: Freelance, Agence...",
+      rolePlaceholder: "ex : Freelance, Agence...",
       loadingText: "Envoi en cours...",
       errorText: "Une erreur s'est produite. Veuillez réessayer.",
     },
